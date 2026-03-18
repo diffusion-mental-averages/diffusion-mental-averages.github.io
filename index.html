@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+            content="Diffusion Mental Averages (DMAs)">
+    <meta name="keywords" content="Diffusion Mental Averages, DMA, Diffusion Models, Average Images">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diffusion Mental Averages</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+        dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <!-- Load Font, Bootstrap, JQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+
+    <!-- Overwrite bootstrap styles -->
+    <link rel="stylesheet" href="./files/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./files/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="./files/css/styles.css">
+    <link href="./files/css/css" rel="stylesheet" type="text/css">
+
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./files/content/logo/tab.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./files/content/logo/tab.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./files/content/logo/tab.png">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="./files/css/mycss.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+</head>
+<body>
+
+    <!-- Dark mode toggle -->
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <i id="theme-icon" class="fa fa-moon-o"></i>
+    </button>
+
+
+
+    <section id="head of page">
+        <div class="highlight-clean" style="padding-bottom: 10px; padding-top: 50px;">
+            <div class="container" style="max-width: 1200px">
+                <div class="row align-items-center">
+                    <!-- Left Side: Title and Info -->
+                    <div class="col-lg-5 text-center text-lg-right" style="padding-right: 40px;">
+                        <h1 class="text-center text-lg-left" style="display: block; line-height: 1.05; font-weight: 800; font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 30px; letter-spacing: +0.04em; color: #111827;"> 
+                            Diffusion<br>
+                            Mental <br>
+                            Averages<img src="./files/content/logo/bird.png" style="vertical-align:middle; margin-left:4px; margin-bottom: 8px;" width="70" alt="logo" class="moving-bird" />
+                        </h1>
+                        
+                        <div id="author and affiliate" style="margin-bottom: 20px;">
+                            <h5 style="font-weight:500; font-size: 1.4rem; margin-bottom: 8px;">
+                                <a style="text-decoration: none;" href="https://phonphrm.github.io/">Phonphrm Thawatdamrongkit</a>
+                            </h5>
+                            <h5 style="font-weight:500; font-size: 1.4rem; margin-bottom: 8px;">
+                                <a style="text-decoration: none;" href="https://scholar.google.com/citations?hl=en&user=Iw1G8EQAAAAJ">Sukit Seripanitkarn</a>
+                            </h5>
+                            <h5 style="font-weight:500; font-size: 1.4rem; margin-bottom: 18px;">
+                                <a style="text-decoration: none;" href="https://www.supasorn.com">Supasorn Suwajanakorn</a>
+                            </h5>
+                            <h5 style="color: #6c757d; font-size: 1.25rem; margin-bottom: 20px;"> 
+                                VISTEC, Thailand
+                            </h5>
+                        </div>
+
+                        <h4 class="cvpr-label" style="font-weight:bold; font-size: 30px; color:#4803a1; margin-bottom: 25px;">
+                            CVPR 2026
+                        </h4>
+
+                        <div class="buttons d-flex justify-content-center justify-content-lg-end flex-wrap" style="margin-bottom: 15px; gap: 10px;" id="paper and code buttons">
+                            <a class="btn btn-light mybtn" style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: flex; align-items: center;" role="button" id="paper button">
+                                <svg style="width:18px;height:18px;margin-right:8px; color: #555;" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
+                                </svg>
+                                Paper
+                            </a>
+                            <a class="btn btn-light mybtn" style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: flex; align-items: center;" role="button" id="code button">
+                                <img src="./files/content/image/github-mark.png" alt="GitHub Logo" style="margin-right: 8px; width: 18px;">
+                                Code (Coming Soon)
+                            </a>
+                        </div>
+                    </div><!-- end left col -->
+
+                    <!-- Right Side: Teaser Image -->
+                    <div class="col-lg-7 text-center mt-5 mt-lg-0">
+                        <figure style="margin: 0;"> 
+                            <img class="teaser" src="./files/content/image/teaser.png" style="width: 100%; max-width: 700px; height: auto; border-radius: 10px;"> 
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center" id="tldr" style="margin-top: 40px;">
+                <div class="col-md-8 text-center">
+                    <div class="tldr-box">
+                        <h5 style="font-weight: bold; color: #000000;">TL;DR</h5>
+                        <p style="font-size: 20px; color: #6a6a6a;">
+                            We reveal what any concept typically looks like by generating a high-quality “average image” from pre-trained diffusion models.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mental Averages as a Visual Summary Tool -->
+        <section id="mental as visual sum">
+            <div class="container" style="max-width: 900px;">
+                <h2 class="text-center">Mental Averages as a Visual Summary Tool</h2>
+                <p style="font-size: 16px; color: #6a6a6a;" class="text-center">
+                    The mental averages generated by our method provide a concrete visual summary of a concept.
+                    By comparing these mental averages, we can directly answer questions such as “What makes one concept different from another?”
+                </p>
+            </div>
+            <div class="swiper-outer-wrapper">
+                <div class="swiper-card">
+                    <div class="swiper" id="teaser-swiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <h2 class="question-style text-center">
+                                    What distinguishes French from English gardens?
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row justify-content-center">
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/garden/french.png" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of the French garden"</p>
+                                    </div>
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/garden/british.png" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of the English garden"</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="question-style text-center">
+                                    What makes cheap and luxurious cars different?
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row justify-content-center">
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/car/cheap_car.jpg" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of a cheap car"</p>
+                                    </div>
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/car/luxury_car.jpg" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of a luxurious car"</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="question-style text-center">
+                                    What makes a chair comfortable?
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row justify-content-center">
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/chair/chair.png" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of a chair"</p>
+                                    </div>
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/chair/comf_chair.png" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of a comfortable chair"</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="question-style text-center">
+                                    What makes one dog faster than another?
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row justify-content-center">
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/dog/slow_dog.jpg" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of a slow dog"</p>
+                                    </div>
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/dog/fast_dog.jpg" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of a fast dog"</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="question-style text-center">
+                                    How does the model imagine Impressionist and Expressionist art styles?
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row justify-content-center">
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/art/impressionist.png" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of an Impressionist artwork"</p>
+                                    </div>
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/art/expressionist.png" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of an Expressionist artwork"</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="question-style text-center">
+                                    What makes a bedroom feel cozy?
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row justify-content-center">
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/bedroom/bedroom.png" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of a bedroom"</p>
+                                    </div>
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/bedroom/cozy_bedroom.png" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of a cozy bedroom"</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="question-style text-center">
+                                    What features does the model associate with healthy and unhealthy meals?
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row justify-content-center">
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/meal/healthy_meal.png" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of a healthy meal"</p>
+                                    </div>
+                                    <div class="col-6 col-md-4 swiper-col text-center">
+                                        <img src="./files/content/probe_tools/meal/unhealthy_meal.png" class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of an unhealthy meal"</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="teaser-swiper-button-prev"></div>
+                <div class="teaser-swiper-button-next"></div>
+            </div>
+            <div class="text-center mt-3 mb-4">
+                <a class="btn btn-light mybtn" style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: inline-flex; align-items: center;" href="visual_summary_all.html" role="button">
+                    <span>All results</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Model-Specific Mental Averages -->
+         <div class="container mt-5"></div>
+         <section id="model specific mental averages">
+            <div class="container" style="max-width: 900px;">
+                <h2 class="text-center">Model-Specific Mental Averages</h2>
+                <p style="font-size: 16px; color: #6a6a6a;" class="text-center">
+                    Our method generalizes across models and helps diagnose of how fine-tuning modifies or preserves concept semantics.
+                </p>
+            </div>
+            <div class="swiper-outer-wrapper">
+                <div class="swiper-card">
+                    <div class="swiper" id="model-specific-swiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <h2 class="text-center prompt-heading">
+                                    "A photo of a castle"
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row">
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/castle/sd15.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">SD1.5</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/castle/realistic.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Realistic Vision V5.1</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/castle/pixelart.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Dreamshaper PixelArt</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/castle/flat2d.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Flat-2D-Animerge</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="text-center prompt-heading">
+                                    "A photo of a stained-glass window"
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row">
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/stained-glass/sd15.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">SD1.5</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/stained-glass/realistic.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Realistic Vision V5.1</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/stained-glass/pixelart.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Dreamshaper PixelArt</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/stained-glass/flat2d.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Flat-2D-Animerge</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="text-center prompt-heading">
+                                    "Photo portrait of a soldier"
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row">
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/soldier/sd15.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">SD1.5</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/soldier/realistic.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Realistic Vision V5.1</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/soldier/pixelart.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Dreamshaper PixelArt</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/soldier/flat2d.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Flat-2D-Animerge</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="text-center prompt-heading">
+                                    "A photo of a dolphin"
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row">
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/dolphin/sd15.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">SD1.5</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/dolphin/realistic.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Realistic Vision V5.1</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/dolphin/pixelart.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Dreamshaper PixelArt</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/dolphin/flat2d.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Flat-2D-Animerge</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="text-center prompt-heading">
+                                    "A photo of Italy"
+                                </h2>
+                                <div class="container mt-4"></div>
+                                <div class="row swiper-row">
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/italy/sd15.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">SD1.5</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/italy/realistic.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Realistic Vision V5.1</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/italy/pixelart.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Dreamshaper PixelArt</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 swiper-col text-center">
+                                        <img src="./files/content/model_specific/italy/flat2d.png" class="img-fluid swiper-img">
+                                        <p class="caption-text">Flat-2D-Animerge</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="model-specific-swiper-button-prev"></div>
+                <div class="model-specific-swiper-button-next"></div>
+            </div>
+            <div class="text-center mt-3 mb-4">
+                <a class="btn btn-light mybtn" style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: inline-flex; align-items: center;" href="model_specific_all.html" role="button">
+                    <span>All results</span>
+                </a>
+            </div>
+         </section>
+
+
+    </section>
+
+    <section id="abstract and method">
+        <div class="container mt-5"></div>
+        <div class="bounding-box" id="abstract">
+            <div class="container" style="max-width: 900px">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center">Abstract</h2>
+                        <p style="font-size: 16px; color: #6a6a6a;">
+                            Can a diffusion model produce its own “mental average” of a concept—one that is as sharp and realistic as a typical sample? 
+                            We introduce Diffusion Mental Averages (DMA), a model-centric answer to this question. While prior methods aim to average image collections, 
+                            they produce blurry results when applied to diffusion samples from the same prompt.  
+                            These data-centric techniques operate outside the model, ignoring the generative process. 
+                            In contrast, DMA averages within the diffusion model’s semantic space, as discovered by recent studies.  
+                            Since this space evolves across timesteps and lacks a direct decoder, 
+                            we cast averaging as trajectory alignment: optimize multiple noise latents so their denoising trajectories progressively converge toward shared coarse-to-fine semantics, yielding a single sharp prototype. 
+                            We extend our approach to multimodal concepts (e.g., dogs with many breeds) by clustering samples in semantically-rich spaces such as CLIP and applying Textual Inversion or LoRA to bridge CLIP clusters into diffusion space. 
+                            This is, to our knowledge, the first approach that delivers consistent, realistic averages, even for abstract concepts, serving as a concrete visual summary and a lens into model biases and concept representation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5"></div>
+        <div class="bounding-box" id="method">
+            <div class="container" style="max-width: 900px">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center">Approach</h2>
+                        <p style="font-size: 16px; color: #6a6a6a;">
+                            In diffusion models, semantic information is distributed along the denoising trajectory, 
+                            evolving from coarse structure to fine details. 
+                            This motivates performing averaging not in image space or within a single latent layer, but along the model’s denoising process itself. 
+                            We therefore recast the problem as aligning multiple denoising trajectories so that they converge toward a shared semantic consensus.
+                        </p>
+                        <p style="font-size: 16px; color: #6a6a6a;">
+                            The key idea is to jointly optimize multiple noise latents so that their denoising trajectories converge toward shared semantics.  
+                            Specifically, at each timestep, their h-space activations are averaged to form a semantic target, and each latent is optimized to match it before denoising to the next step. 
+                            Repeating this process across timesteps aligns coarse-to-fine semantics, yielding a single "mental average" of the concept.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <img class="overview" src="./files/content/image/overview.png" style="width: 100%; max-width: 1000px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Mode Averages">
+        <hr class="section-divider">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="text-center">Mode Averages</h2>
+            <p style="font-size: 16px; color: #6a6a6a;" class="text-center">
+                A single average may oversimplify concepts that have several distinct semantic modes. 
+                For example, “crane” can refer to either a bird or a construction machine, 
+                which are two modes that are difficult to meaningfully blend into a single prototype.
+                To address this, we extend our method by first clustering samples in semantically rich spaces, 
+                such as OpenAI CLIP (unsupervised) or BLIP-VQA (grounded). 
+                Before averaging, we bridge the gap between the clustering space and the diffusion latent space using techniques such as Textual Inversion or LoRA to steer the denoising process toward each cluster’s semantic subregion. 
+                Finally, we apply our Diffusion Mental Average method to generate a separate mode-specific average for each cluster.
+            </p>
+        </div>
+        <!-- Swiper for Unsupervised CLIP Clusters -->
+        <div class="swiper-outer-wrapper">
+            <div class="swiper-card">
+                <div class="swiper" id="mode-averages-swiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="slide-header text-center">
+                                <div class="slide-label">Unsupervised Clustering</div>
+                                <div class="slide-concept">Crane</div>
+                            </div>
+                            <div class="container mt-4"></div>
+                            <div class="row swiper-row">
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/crane/crane_single.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Single Average</p>
+                                </div>
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/crane/crane1.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 1</p>
+                                </div>
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/crane/crane2.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 2</p>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="swiper-slide">
+                            <div class="slide-header text-center">
+                                <div class="slide-label">Unsupervised Clustering</div>
+                                <div class="slide-concept">Pumpkin</div>
+                            </div>
+                            <div class="container mt-4"></div>
+                            <div class="row swiper-row">
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/pumpkin/pumpkin_single.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Single Average</p>
+                                </div>
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/pumpkin/pumpkin1.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 1</p>
+                                </div>
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/pumpkin/pumpkin2.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 2</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slide-header text-center">
+                                <div class="slide-label">Unsupervised Clustering</div>
+                                <div class="slide-concept">Fan</div>
+                            </div>
+                            <div class="container mt-4"></div>
+                            <div class="row swiper-row">
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/fan/fan_single.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Single Average</p>
+                                </div>
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/fan/fan1.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 1</p>
+                                </div>
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/fan/fan2.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 2</p>
+                                </div>
+                            </div>
+                        </div>
+
+                       <div class="swiper-slide">
+                            <div class="slide-header text-center">
+                                <div class="slide-label">Unsupervised Clustering</div>
+                                <div class="slide-concept">Boat</div>
+                            </div>
+                            <div class="container mt-4"></div>
+                            <div class="row swiper-row">
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/boat/boat_single.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Single Average</p>
+                                </div>
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/boat/boat1.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 1</p>
+                                </div>
+                                <div class="col-4 swiper-col text-center">
+                                    <img src="./files/content/mode_clip/boat/boat2.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 2</p>
+                                </div>
+                            </div>
+                        </div> 
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="mode-swiper-button-prev"></div>
+            <div class="mode-swiper-button-next"></div>
+        </div>
+
+        <!-- Swiper for Grounded BLIP-VQA Clusters -->
+        <div class="container mt-5"></div>
+        <div class="swiper-outer-wrapper">
+            <div class="swiper-card">
+                <div class="swiper" id="main-results-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide-header text-center">
+                                <div class="slide-label">Grounded Clustering</div>
+                                <div class="slide-concept">Car <span class="slide-detail">clustered by</span><span class="slide-bold"> Model</span></div>
+                            </div>
+                            <div class="container mt-4"></div>
+                            <div class="row swiper-row">
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/car/car1.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 1</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/car/car2.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 2</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/car/car3.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 3</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/car/car4.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 4</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slide-header text-center">
+                                <div class="slide-label">Grounded Clustering</div>
+                                <div class="slide-concept">Dog <span class="slide-detail">clustered by</span><span class="slide-bold"> Breed</span></div>
+                            </div>
+                            <div class="container mt-4"></div>
+                            <div class="row swiper-row">
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/dog/dog1.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 1</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/dog/dog2.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 2</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/dog/dog3.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 3</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/dog/dog4.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 4</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slide-header text-center">
+                                <div class="slide-label">Grounded Clustering</div>
+                                <div class="slide-concept">Astronaut <span class="slide-detail">clustered by</span><span class="slide-bold"> Ethnicity</span></div>
+                            </div>
+                            <div class="container mt-4"></div>
+                            <div class="row swiper-row">
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/ast/ast1.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 1</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/ast/ast2.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 2</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/ast/ast3.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 3</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/ast/ast4.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 4</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slide-header text-center">
+                                <div class="slide-label">Grounded Clustering</div>
+                                <div class="slide-concept">Car <span class="slide-detail">clustered by</span><span class="slide-bold"> Color</span></div>
+                            </div>
+                            <div class="container mt-4"></div>
+                            <div class="row swiper-row">
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/car_color/car_color1.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 1</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/car_color/car_color2.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 2</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/car_color/car_color3.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 3</p>
+                                </div>
+                                <div class="col-6 col-md-3 swiper-col text-center">
+                                    <img src="./files/content/mode_vqa/car_color/car_color4.png" class="img-fluid swiper-img">
+                                    <p class="caption-text">Cluster 4</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <!-- Arrows sit OUTSIDE the card, inside the outer wrapper -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+    </section>
+
+    <section id="generalize-across-architecture">
+        <hr class="section-divider">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="text-center">Generalization Across Architectures</h2>
+            <p style="font-size: 16px; color: #6a6a6a;" class="text-center">
+                We extend our method to DiT-XL, a class-conditional transformer-based diffusion model.
+            </p>
+        </div>
+        <div class="dit-card-wrapper">
+            <div class="dit-grid-card">
+                <div class="row justify-content-center">
+                    <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
+                        <img src="./files/content/dit/husky.png" class="img-fluid dit-img" alt="Husky">
+                        <p class="caption-text">Husky</p>
+                    </div>
+                    <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
+                        <img src="./files/content/dit/carbonara.png" class="img-fluid dit-img" alt="Carbonara">
+                        <p class="caption-text">Carbonara</p>
+                    </div>
+                    <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
+                        <img src="./files/content/dit/gas_helmet.png" class="img-fluid dit-img" alt="Gas Helmet">
+                        <p class="caption-text">Gas Helmet</p>
+                    </div>
+                    <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
+                        <img src="./files/content/dit/horse_cart.png" class="img-fluid dit-img" alt="Horse Cart">
+                        <p class="caption-text">Horse Cart</p>
+                    </div>
+                    <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
+                        <img src="./files/content/dit/baseball_player.png" class="img-fluid dit-img" alt="Baseball Player">
+                        <p class="caption-text">Baseball Player</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
+                        <img src="./files/content/dit/crane.png" class="img-fluid dit-img" alt="Crane">
+                        <p class="caption-text">Crane</p>
+                    </div>
+                    <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
+                        <img src="./files/content/dit/ipod.png" class="img-fluid dit-img" alt="iPod">
+                        <p class="caption-text">iPod</p>
+                    </div>
+                    <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
+                        <img src="./files/content/dit/race_car.png" class="img-fluid dit-img" alt="Race Car">
+                        <p class="caption-text">Race Car</p>
+                    </div>
+                    <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
+                        <img src="./files/content/dit/lighthouse.png" class="img-fluid dit-img" alt="Lighthouse">
+                        <p class="caption-text">Lighthouse</p>
+                    </div>
+                    <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
+                        <img src="./files/content/dit/cheeseburger.png" class="img-fluid dit-img" alt="Cheeseburger">
+                        <p class="caption-text">Cheeseburger</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="additional results">
+        <hr class="section-divider">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="text-center">Additional Results</h2>
+        </div>
+        <div class="dit-card-wrapper">
+            <div class="dit-grid-card">
+                <div class="row">
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/alien.jpg" class="img-fluid dit-img" alt="Alien">
+                        <p class="caption-text">Alien</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/wizard.jpg" class="img-fluid dit-img" alt="Wizard">
+                        <p class="caption-text">Wizard</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/kungfu.jpg" class="img-fluid dit-img" alt="Kungfu Master">
+                        <p class="caption-text">Kungfu Master</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/ceo.jpg" class="img-fluid dit-img" alt="CEO">
+                        <p class="caption-text">CEO</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/dance.jpg" class="img-fluid dit-img" alt="Dance">
+                        <p class="caption-text">Dance</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/breakfast.jpg" class="img-fluid dit-img" alt="Breakfast">
+                        <p class="caption-text">Breakfast</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/aurora.jpg" class="img-fluid dit-img" alt="Aurora">
+                        <p class="caption-text">Aurora</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/ferris_wheels.jpg" class="img-fluid dit-img" alt="Ferris Wheel">
+                        <p class="caption-text">Ferris Wheel</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/childhood.jpg" class="img-fluid dit-img" alt="Childhood">
+                        <p class="caption-text">Childhood</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/peace.jpg" class="img-fluid dit-img" alt="Peace">
+                        <p class="caption-text">Peace</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/fear.jpg" class="img-fluid dit-img" alt="Fear">
+                        <p class="caption-text">Fear</p>
+                    </div>
+                    <div class="col-6 col-sm-3 dit-col text-center">
+                        <img src="./files/content/additional/strength.jpg" class="img-fluid dit-img" alt="Strength">
+                        <p class="caption-text">Strength</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footnote">
+    <div class="end" style="margin-top: 30px;">
+        <div style="text-align: center;">
+            <a href="https://vistec.ist/vision" target="_blank"><img src="./files/content/logo/vll_logo.png"
+                style="width: 130px; display: inline; margin: 0 100px;"></a>
+            <a href="https://vistec.ac.th/" target="_blank"><img src="./files/content/logo/vistec_logo.png"
+                class="vistec-offset" style="width: 130px; display: inline; margin: 0 100px; position:relative; "></a>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- SwiperJS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        /* ── Dark mode ─────────────────────────────────────────── */
+        const toggle = document.getElementById('theme-toggle');
+        const icon   = document.getElementById('theme-icon');
+
+        function applyTheme(dark) {
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+            icon.className = dark ? 'fa fa-sun-o' : 'fa fa-moon-o';
+        }
+
+        // Restore saved preference
+        applyTheme(localStorage.getItem('theme') === 'dark');
+
+        toggle.addEventListener('click', () => {
+            const dark = document.documentElement.getAttribute('data-theme') !== 'dark';
+            localStorage.setItem('theme', dark ? 'dark' : 'light');
+            applyTheme(dark);
+        });
+
+        /* ── Swiper ────────────────────────────────────────────── */
+        const teaserSwiper = new Swiper('#teaser-swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 10000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: '#teaser-swiper .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.teaser-swiper-button-next',
+                prevEl: '.teaser-swiper-button-prev',
+            },
+        });
+
+        const modelSpecificSwiper = new Swiper('#model-specific-swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 10000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+                enabled: false,
+            },
+            pagination: {
+                el: '#model-specific-swiper .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.model-specific-swiper-button-next',
+                prevEl: '.model-specific-swiper-button-prev',
+            },
+        });
+
+        // Start the second swiper 3s later so both boxes never swipe in sync
+        setTimeout(() => modelSpecificSwiper.autoplay.start(), 3000);
+
+        const swiper = new Swiper('#main-results-swiper', {
+            direction: 'horizontal',
+            loop: true,
+            pagination: {
+                el: '#main-results-swiper .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        const modeSwiper = new Swiper('#mode-averages-swiper', {
+            direction: 'horizontal',
+            loop: true,
+            pagination: {
+                el: '#mode-averages-swiper .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.mode-swiper-button-next',
+                prevEl: '.mode-swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>
