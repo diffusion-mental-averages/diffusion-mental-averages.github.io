@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
 .video-container {
 	position: relative;
 	padding-bottom: 56.25%;
@@ -551,6 +553,7 @@ body {
 h2 {
 	font-size: 28px;
 	margin-bottom: 0.8em;
+	margin-top: 3rem;
 }
 h1,
 h2,
@@ -743,7 +746,7 @@ hr.divider_intra {
 }
 
 .row:not(:last-child):not(.authors) {
-	margin-bottom: 30px;
+	/* margin-bottom: 30px; */
 }
 
 .invisible {
@@ -803,6 +806,10 @@ hr.divider_intra {
     display: block;
     margin-top: 130px;
 } */
+
+.table td {
+	padding: 0.2rem;
+}
 .model-viewer {
 	margin-bottom: 8px;
 }
@@ -908,7 +915,6 @@ model-viewer .controls {
 }
 
 /* Google Fonts - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 .slide-container {
 	/* max-width: 1180px; */
