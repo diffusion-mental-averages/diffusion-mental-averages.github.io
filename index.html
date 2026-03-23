@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-            content="Diffusion Mental Averages (DMAs)">
+    <meta name="description" content="Diffusion Mental Averages (DMAs)">
     <meta name="keywords" content="Diffusion Mental Averages, DMA, Diffusion Models, Average Images">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Diffusion Mental Averages</title>
@@ -15,7 +15,7 @@
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
-        dataLayer.push(arguments);
+            dataLayer.push(arguments);
         }
 
         gtag('js', new Date());
@@ -27,9 +27,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.2.min.js"
-    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+        integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
 
     <!-- Overwrite bootstrap styles -->
     <link rel="stylesheet" href="./files/css/bootstrap.min.css">
@@ -51,6 +51,7 @@
 
 
 </head>
+
 <body>
 
     <!-- Dark mode toggle -->
@@ -64,75 +65,172 @@
         <div class="highlight-clean" style="padding-bottom: 10px; padding-top: 50px;">
             <div class="container" style="max-width: 1200px">
                 <div class="row align-items-center">
-                    <!-- Left Side: Title and Info -->
-                    <div class="col-lg-5 text-center text-lg-right" style="padding-right: 40px;">
-                        <h1 class="text-center text-lg-left" style="display: block; line-height: 1.05; font-weight: 800; font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 30px; letter-spacing: +0.04em; color: #111827;"> 
+                    <!-- Left Side: Teaser Image -->
+                    <div class="col-lg-7 text-center mb-5 mb-lg-0">
+                        <figure style="margin: 0;">
+                            <img class="teaser" src="./files/content/image/teaser.png"
+                                style="width: 100%; max-width: 700px; height: auto; border-radius: 10px;">
+                        </figure>
+                    </div>
+
+                    <!-- Right Side: Title and Info -->
+                    <div class="col-lg-5 text-center text-lg-left" style="padding-left: 30px;">
+                        <h1 class="text-center text-lg-left"
+                            style="display: block; line-height: 0.95; font-weight: 800; font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 30px; letter-spacing: +0.02em; color: #111827;">
                             Diffusion<br>
                             Mental <br>
-                            Average<span class="pinched-s"><span class="pinched-s-text">s</span><span class="fragment-shard"></span></span><img src="./files/content/logo/bird.png" style="vertical-align:middle; margin-left:4px; margin-bottom: 8px;" width="70" alt="logo" class="pecking-bird" />
+                            Average<span class="pinched-s"><span class="pinched-s-text">s</span><span
+                                    class="fragment-shard"></span></span><img src="./files/content/logo/bird.png"
+                                style="vertical-align:middle; margin-left:4px; margin-bottom: 8px;" width="70"
+                                alt="logo" class="pecking-bird" />
                         </h1>
-                        
-                        <div id="author and affiliate" style="margin-bottom: 20px;">
-                            <h5 style="font-weight:500; font-size: 1.4rem; margin-bottom: 8px;">
-                                <a style="text-decoration: none;" href="https://phonphrm.github.io/">Phonphrm Thawatdamrongkit</a>
-                            </h5>
-                            <h5 style="font-weight:500; font-size: 1.4rem; margin-bottom: 8px;">
-                                <a style="text-decoration: none;" href="https://scholar.google.com/citations?hl=en&user=Iw1G8EQAAAAJ">Sukit Seripanitkarn</a>
-                            </h5>
-                            <h5 style="font-weight:500; font-size: 1.4rem; margin-bottom: 18px;">
-                                <a style="text-decoration: none;" href="https://www.supasorn.com">Supasorn Suwajanakorn</a>
-                            </h5>
-                            <h5 style="color: #6c757d; font-size: 1.25rem; margin-bottom: 20px;"> 
+
+                        <div id="author" style="margin-bottom: 20px;">
+                            <span>
+                                <a style="text-decoration: none;" href="https://phonphrm.github.io/">Phonphrm
+                                    Thawatdamrongkit</a>
+                            </span>
+                            <span>
+                                <a style="text-decoration: none;"
+                                    href="https://scholar.google.com/citations?hl=en&user=Iw1G8EQAAAAJ">Sukit
+                                    Seripanitkarn</a>
+                            </span>
+                            <span>
+                                <a style="text-decoration: none;" href="https://www.supasorn.com">Supasorn
+                                    Suwajanakorn</a>
+                            </span>
+                        </div>
+                        <div id="affiliation">
+                            <span>
                                 VISTEC, Thailand
-                            </h5>
+                            </span>
                         </div>
 
-                        <h4 class="cvpr-label" style="font-weight:bold; font-size: 30px; color:#4803a1; margin-bottom: 25px;">
+                        <h4 class="cvpr-label"
+                            style="font-weight:bold; font-size: 30px; color:#4803a1; margin-bottom: 25px; margin-top: 15px;">
                             CVPR 2026
                         </h4>
 
-                        <div class="buttons d-flex justify-content-center justify-content-lg-end flex-wrap" style="margin-bottom: 15px; gap: 10px;" id="paper and code buttons">
-                            <a class="btn btn-light mybtn" style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: flex; align-items: center;" role="button" id="paper button">
+                        <div class="buttons d-flex justify-content-center justify-content-lg-start flex-wrap"
+                            style="margin-bottom: 15px; gap: 10px;" id="paper and code buttons">
+                            <a class="btn btn-light mybtn"
+                                style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: flex; align-items: center;"
+                                role="button" id="paper button">
                                 <svg style="width:18px;height:18px;margin-right:8px; color: #555;" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
+                                    <path fill="currentColor"
+                                        d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z">
+                                    </path>
                                 </svg>
                                 Paper
                             </a>
-                            <a class="btn btn-light mybtn" style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: flex; align-items: center;" role="button" id="code button">
-                                <img src="./files/content/image/github-mark.png" alt="GitHub Logo" style="margin-right: 8px; width: 18px;">
+                            <a class="btn btn-light mybtn"
+                                style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: flex; align-items: center;"
+                                role="button" id="code button">
+                                <img src="./files/content/image/github-mark.png" alt="GitHub Logo"
+                                    style="margin-right: 8px; width: 18px;">
                                 Code (Coming Soon)
                             </a>
                         </div>
-                    </div><!-- end left col -->
-
-                    <!-- Right Side: Teaser Image -->
-                    <div class="col-lg-7 text-center mt-5 mt-lg-0">
-                        <figure style="margin: 0;"> 
-                            <img class="teaser" src="./files/content/image/teaser.png" style="width: 100%; max-width: 700px; height: auto; border-radius: 10px;"> 
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row justify-content-center" id="tldr" style="margin-top: 40px;">
-                <div class="col-md-8 text-center">
-                    <div class="tldr-box">
-                        <h5 style="font-weight: bold; color: #000000;">TL;DR</h5>
-                        <p style="font-size: 20px; color: #6a6a6a;">
-                            We reveal what any concept typically looks like by generating a high-quality “average image” from pre-trained diffusion models.
-                        </p>
-                    </div>
+                    </div><!-- end right col -->
                 </div>
             </div>
         </div>
 
+        <div class="row justify-content-center" id="tldr" style="margin-top: 40px;">
+            <div class="col-md-9 text-center">
+                <div class="tldr-box"
+                    style="display: flex; align-items: center; text-align: left; padding: 10px 20px; gap: 20px;">
+                    <div
+                        style="font-size: 1.5em; font-weight: bold; color: #111827; white-space: nowrap; border-right: 2px solid #e5e7eb; padding-right: 20px;">
+                        TL;DR
+                    </div>
+                    <p style="font-size: 1.15rem; color: #4b5563; margin-bottom: 0; line-height: 1.5;">
+                        We unveil what a diffusion model 'thinks' is typical of a given concept by aligning its
+                        denoising trajectories into a single, sharp mental average.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <section id="abstract and method">
+            <div class="bounding-box" id="abstract">
+                <div class="container" style="max-width: 900px">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="text-center">Abstract</h2>
+                            <p style="font-size: 16px; color: #6a6a6a;">
+                                Can a diffusion model produce its own “mental average” of a concept—one that is as sharp
+                                and realistic as a typical sample?
+                                We introduce Diffusion Mental Averages (DMA), a model-centric answer to this question.
+                                While prior methods aim to average image collections,
+                                they produce blurry results when applied to diffusion samples from the same prompt.
+                                These data-centric techniques operate outside the model, ignoring the generative
+                                process.
+                                In contrast, DMA averages within the diffusion model’s semantic space, as discovered by
+                                recent studies.
+                                Since this space evolves across timesteps and lacks a direct decoder,
+                                we cast averaging as trajectory alignment: optimize multiple noise latents so their
+                                denoising trajectories progressively converge toward shared coarse-to-fine semantics,
+                                yielding a single sharp prototype.
+                                We extend our approach to multimodal concepts (e.g., dogs with many breeds) by
+                                clustering samples in semantically-rich spaces such as CLIP and applying Textual
+                                Inversion or LoRA to bridge CLIP clusters into diffusion space.
+                                This is, to our knowledge, the first approach that delivers consistent, realistic
+                                averages, even for abstract concepts, serving as a concrete visual summary and a lens
+                                into model biases and concept representation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bounding-box" id="method">
+                <div class="container" style="max-width: 900px">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="text-center">Approach</h2>
+                            <p style="font-size: 16px; color: #6a6a6a;">
+                                Given a concept prompt, we aim to synthesize an average image that captures the
+                                concept’s shared semantics under a probe diffusion model while preserving visual
+                                realism.
+                            </p>
+                            <p style="font-size: 16px; color: #6a6a6a;">
+                                In diffusion models, semantic information is distributed along the denoising trajectory,
+                                evolving from coarse structure to fine details.
+                                This motivates performing averaging not in image space or within a single latent layer,
+                                but along the model’s denoising process itself.
+                                We therefore recast the problem as aligning multiple denoising trajectories so that they
+                                converge toward a shared semantic consensus.
+                            </p>
+                            <p style="font-size: 16px; color: #6a6a6a;">
+                                The key idea is to jointly optimize multiple noise latents so that their denoising
+                                trajectories converge toward shared semantics.
+                                Specifically, at each timestep, their h-space activations are averaged to form a
+                                semantic target, and each latent is optimized to match it before denoising to the next
+                                step.
+                                Repeating this process across timesteps aligns coarse-to-fine semantics, yielding a
+                                single "mental average" of the concept.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img class="overview" src="./files/content/image/overview.png"
+                                style="width: 100%; max-width: 1000px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Mental Averages as a Visual Summary Tool -->
         <section id="mental as visual sum">
             <div class="container" style="max-width: 900px;">
                 <h2 class="text-center">Mental Averages as a Visual Summary Tool</h2>
                 <p style="font-size: 16px; color: #6a6a6a;" class="text-center">
                     The mental averages generated by our method provide a concrete visual summary of a concept.
-                    By comparing these mental averages, we can directly answer questions such as “What makes one concept different from another?”
+                    By comparing these mental averages, we can directly answer questions such as “What makes one concept
+                    different from another?”
                 </p>
             </div>
             <div class="swiper-outer-wrapper">
@@ -147,12 +245,16 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row justify-content-center">
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/garden/french.png" class="img-fluid swiper-img">
-                                        <p class="caption-text" style="display:block;">"A photo of the French garden"</p>
+                                        <img src="./files/content/probe_tools/garden/french.png"
+                                            class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of the French garden"
+                                        </p>
                                     </div>
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/garden/british.png" class="img-fluid swiper-img">
-                                        <p class="caption-text" style="display:block;">"A photo of the English garden"</p>
+                                        <img src="./files/content/probe_tools/garden/british.png"
+                                            class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of the English garden"
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -164,11 +266,13 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row justify-content-center">
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/car/cheap_car.jpg" class="img-fluid swiper-img">
+                                        <img src="./files/content/probe_tools/car/cheap_car.jpg"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text" style="display:block;">"A photo of a cheap car"</p>
                                     </div>
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/car/luxury_car.jpg" class="img-fluid swiper-img">
+                                        <img src="./files/content/probe_tools/car/luxury_car.jpg"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text" style="display:block;">"A photo of a luxurious car"</p>
                                     </div>
                                 </div>
@@ -181,12 +285,15 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row justify-content-center">
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/chair/chair.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/probe_tools/chair/chair.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text" style="display:block;">"A photo of a chair"</p>
                                     </div>
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/chair/comf_chair.png" class="img-fluid swiper-img">
-                                        <p class="caption-text" style="display:block;">"A photo of a comfortable chair"</p>
+                                        <img src="./files/content/probe_tools/chair/comf_chair.png"
+                                            class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of a comfortable chair"
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -198,11 +305,13 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row justify-content-center">
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/dog/slow_dog.jpg" class="img-fluid swiper-img">
+                                        <img src="./files/content/probe_tools/dog/slow_dog.jpg"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text" style="display:block;">"A photo of a slow dog"</p>
                                     </div>
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/dog/fast_dog.jpg" class="img-fluid swiper-img">
+                                        <img src="./files/content/probe_tools/dog/fast_dog.jpg"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text" style="display:block;">"A photo of a fast dog"</p>
                                     </div>
                                 </div>
@@ -215,12 +324,16 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row justify-content-center">
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/art/impressionist.png" class="img-fluid swiper-img">
-                                        <p class="caption-text" style="display:block;">"A photo of an Impressionist artwork"</p>
+                                        <img src="./files/content/probe_tools/art/impressionist.png"
+                                            class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of an Impressionist
+                                            artwork"</p>
                                     </div>
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/art/expressionist.png" class="img-fluid swiper-img">
-                                        <p class="caption-text" style="display:block;">"A photo of an Expressionist artwork"</p>
+                                        <img src="./files/content/probe_tools/art/expressionist.png"
+                                            class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of an Expressionist
+                                            artwork"</p>
                                     </div>
                                 </div>
                             </div>
@@ -232,11 +345,13 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row justify-content-center">
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/bedroom/bedroom.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/probe_tools/bedroom/bedroom.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text" style="display:block;">"A photo of a bedroom"</p>
                                     </div>
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/bedroom/cozy_bedroom.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/probe_tools/bedroom/cozy_bedroom.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text" style="display:block;">"A photo of a cozy bedroom"</p>
                                     </div>
                                 </div>
@@ -249,12 +364,15 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row justify-content-center">
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/meal/healthy_meal.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/probe_tools/meal/healthy_meal.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text" style="display:block;">"A photo of a healthy meal"</p>
                                     </div>
                                     <div class="col-6 col-md-4 swiper-col text-center">
-                                        <img src="./files/content/probe_tools/meal/unhealthy_meal.png" class="img-fluid swiper-img">
-                                        <p class="caption-text" style="display:block;">"A photo of an unhealthy meal"</p>
+                                        <img src="./files/content/probe_tools/meal/unhealthy_meal.png"
+                                            class="img-fluid swiper-img">
+                                        <p class="caption-text" style="display:block;">"A photo of an unhealthy meal"
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -267,19 +385,21 @@
                 <div class="teaser-swiper-button-next"></div>
             </div>
             <div class="text-center mt-3 mb-4">
-                <a class="btn btn-light mybtn" style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: inline-flex; align-items: center;" href="visual_summary_all.html" role="button">
+                <a class="btn btn-light mybtn"
+                    style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: inline-flex; align-items: center;"
+                    href="visual_summary_all.html" role="button">
                     <span>All results</span>
                 </a>
             </div>
         </section>
 
         <!-- Model-Specific Mental Averages -->
-         <div class="container mt-5"></div>
-         <section id="model specific mental averages">
+        <section id="model specific mental averages">
             <div class="container" style="max-width: 900px;">
                 <h2 class="text-center">Model-Specific Mental Averages</h2>
                 <p style="font-size: 16px; color: #6a6a6a;" class="text-center">
-                    Our method generalizes across models and helps diagnose of how fine-tuning modifies or preserves concept semantics.
+                    Our method generalizes across models and helps diagnose of how fine-tuning modifies or preserves
+                    concept semantics.
                 </p>
             </div>
             <div class="swiper-outer-wrapper">
@@ -294,19 +414,23 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row">
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/castle/sd15.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/castle/sd15.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">SD1.5</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/castle/realistic.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/castle/realistic.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Realistic Vision V5.1</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/castle/pixelart.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/castle/pixelart.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Dreamshaper PixelArt</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/castle/flat2d.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/castle/flat2d.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Flat-2D-Animerge</p>
                                     </div>
                                 </div>
@@ -319,19 +443,23 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row">
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/stained-glass/sd15.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/stained-glass/sd15.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">SD1.5</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/stained-glass/realistic.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/stained-glass/realistic.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Realistic Vision V5.1</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/stained-glass/pixelart.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/stained-glass/pixelart.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Dreamshaper PixelArt</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/stained-glass/flat2d.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/stained-glass/flat2d.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Flat-2D-Animerge</p>
                                     </div>
                                 </div>
@@ -344,19 +472,23 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row">
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/soldier/sd15.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/soldier/sd15.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">SD1.5</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/soldier/realistic.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/soldier/realistic.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Realistic Vision V5.1</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/soldier/pixelart.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/soldier/pixelart.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Dreamshaper PixelArt</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/soldier/flat2d.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/soldier/flat2d.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Flat-2D-Animerge</p>
                                     </div>
                                 </div>
@@ -369,19 +501,23 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row">
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/dolphin/sd15.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/dolphin/sd15.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">SD1.5</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/dolphin/realistic.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/dolphin/realistic.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Realistic Vision V5.1</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/dolphin/pixelart.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/dolphin/pixelart.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Dreamshaper PixelArt</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/dolphin/flat2d.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/dolphin/flat2d.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Flat-2D-Animerge</p>
                                     </div>
                                 </div>
@@ -394,24 +530,28 @@
                                 <div class="container mt-4"></div>
                                 <div class="row swiper-row">
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/italy/sd15.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/italy/sd15.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">SD1.5</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/italy/realistic.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/italy/realistic.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Realistic Vision V5.1</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/italy/pixelart.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/italy/pixelart.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Dreamshaper PixelArt</p>
                                     </div>
                                     <div class="col-6 col-md-3 swiper-col text-center">
-                                        <img src="./files/content/model_specific/italy/flat2d.png" class="img-fluid swiper-img">
+                                        <img src="./files/content/model_specific/italy/flat2d.png"
+                                            class="img-fluid swiper-img">
                                         <p class="caption-text">Flat-2D-Animerge</p>
                                     </div>
                                 </div>
                             </div>
-                        
+
 
                         </div>
                         <div class="swiper-pagination"></div>
@@ -421,82 +561,34 @@
                 <div class="model-specific-swiper-button-next"></div>
             </div>
             <div class="text-center mt-3 mb-4">
-                <a class="btn btn-light mybtn" style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: inline-flex; align-items: center;" href="model_specific_all.html" role="button">
+                <a class="btn btn-light mybtn"
+                    style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: inline-flex; align-items: center;"
+                    href="model_specific_all.html" role="button">
                     <span>All results</span>
                 </a>
             </div>
-         </section>
+        </section>
 
 
     </section>
 
-    <section id="abstract and method">
-        <div class="container mt-5"></div>
-        <div class="bounding-box" id="abstract">
-            <div class="container" style="max-width: 900px">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-center">Abstract</h2>
-                        <p style="font-size: 16px; color: #6a6a6a;">
-                            Can a diffusion model produce its own “mental average” of a concept—one that is as sharp and realistic as a typical sample? 
-                            We introduce Diffusion Mental Averages (DMA), a model-centric answer to this question. While prior methods aim to average image collections, 
-                            they produce blurry results when applied to diffusion samples from the same prompt.  
-                            These data-centric techniques operate outside the model, ignoring the generative process. 
-                            In contrast, DMA averages within the diffusion model’s semantic space, as discovered by recent studies.  
-                            Since this space evolves across timesteps and lacks a direct decoder, 
-                            we cast averaging as trajectory alignment: optimize multiple noise latents so their denoising trajectories progressively converge toward shared coarse-to-fine semantics, yielding a single sharp prototype. 
-                            We extend our approach to multimodal concepts (e.g., dogs with many breeds) by clustering samples in semantically-rich spaces such as CLIP and applying Textual Inversion or LoRA to bridge CLIP clusters into diffusion space. 
-                            This is, to our knowledge, the first approach that delivers consistent, realistic averages, even for abstract concepts, serving as a concrete visual summary and a lens into model biases and concept representation.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container mt-5"></div>
-        <div class="bounding-box" id="method">
-            <div class="container" style="max-width: 900px">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-center">Approach</h2>
-                        <p style="font-size: 16px; color: #6a6a6a;">
-                            Given a concept prompt, we aim to synthesize an average image that captures the concept’s shared semantics under a probe diffusion model while preserving visual realism.
-                        </p>
-                        <p style="font-size: 16px; color: #6a6a6a;">
-                            In diffusion models, semantic information is distributed along the denoising trajectory, 
-                            evolving from coarse structure to fine details. 
-                            This motivates performing averaging not in image space or within a single latent layer, but along the model’s denoising process itself. 
-                            We therefore recast the problem as aligning multiple denoising trajectories so that they converge toward a shared semantic consensus.
-                        </p>
-                        <p style="font-size: 16px; color: #6a6a6a;">
-                            The key idea is to jointly optimize multiple noise latents so that their denoising trajectories converge toward shared semantics.  
-                            Specifically, at each timestep, their h-space activations are averaged to form a semantic target, and each latent is optimized to match it before denoising to the next step. 
-                            Repeating this process across timesteps aligns coarse-to-fine semantics, yielding a single "mental average" of the concept.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <img class="overview" src="./files/content/image/overview.png" style="width: 100%; max-width: 1000px;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <section id="Mode Averages">
         <hr class="section-divider">
         <div class="container" style="max-width: 900px;">
             <h2 class="text-center">Mode Averages</h2>
             <p style="font-size: 16px; color: #6a6a6a;" class="text-center">
-                A single average may oversimplify concepts that have several distinct semantic modes. 
-                For example, “crane” can refer to either a bird or a construction machine, 
+                A single average may oversimplify concepts that have several distinct semantic modes.
+                For example, “crane” can refer to either a bird or a construction machine,
                 which are two modes that are difficult to meaningfully blend into a single prototype.
-                To address this, we extend our method by first clustering samples in semantically rich spaces, 
-                such as OpenAI CLIP (unsupervised) or BLIP-VQA (grounded). 
-                Before averaging, we bridge the gap between the clustering space and the diffusion latent space using techniques such as Textual Inversion or LoRA to steer the denoising process toward each cluster’s semantic subregion. 
-                Finally, we apply our Diffusion Mental Average method to generate a separate mode-specific average for each cluster.
+                To address this, we extend our method by first clustering samples in semantically rich spaces,
+                such as OpenAI CLIP (unsupervised) or BLIP-VQA (grounded).
+                Before averaging, we bridge the gap between the clustering space and the diffusion latent space using
+                techniques such as Textual Inversion or LoRA to steer the denoising process toward each cluster’s
+                semantic subregion.
+                Finally, we apply our Diffusion Mental Average method to generate a separate mode-specific average for
+                each cluster.
             </p>
         </div>
         <!-- Swiper for Unsupervised CLIP Clusters -->
@@ -513,7 +605,8 @@
                             <div class="container mt-4"></div>
                             <div class="row swiper-row">
                                 <div class="col-4 swiper-col text-center">
-                                    <img src="./files/content/mode_clip/crane/crane_single.png" class="img-fluid swiper-img">
+                                    <img src="./files/content/mode_clip/crane/crane_single.png"
+                                        class="img-fluid swiper-img">
                                     <p class="caption-text">Single Average</p>
                                 </div>
                                 <div class="col-4 swiper-col text-center">
@@ -525,7 +618,7 @@
                                     <p class="caption-text">Cluster 2</p>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
 
                         <div class="swiper-slide">
                             <div class="slide-header text-center">
@@ -535,15 +628,18 @@
                             <div class="container mt-4"></div>
                             <div class="row swiper-row">
                                 <div class="col-4 swiper-col text-center">
-                                    <img src="./files/content/mode_clip/pumpkin/pumpkin_single.png" class="img-fluid swiper-img">
+                                    <img src="./files/content/mode_clip/pumpkin/pumpkin_single.png"
+                                        class="img-fluid swiper-img">
                                     <p class="caption-text">Single Average</p>
                                 </div>
                                 <div class="col-4 swiper-col text-center">
-                                    <img src="./files/content/mode_clip/pumpkin/pumpkin1.png" class="img-fluid swiper-img">
+                                    <img src="./files/content/mode_clip/pumpkin/pumpkin1.png"
+                                        class="img-fluid swiper-img">
                                     <p class="caption-text">Cluster 1</p>
                                 </div>
                                 <div class="col-4 swiper-col text-center">
-                                    <img src="./files/content/mode_clip/pumpkin/pumpkin2.png" class="img-fluid swiper-img">
+                                    <img src="./files/content/mode_clip/pumpkin/pumpkin2.png"
+                                        class="img-fluid swiper-img">
                                     <p class="caption-text">Cluster 2</p>
                                 </div>
                             </div>
@@ -557,7 +653,8 @@
                             <div class="container mt-4"></div>
                             <div class="row swiper-row">
                                 <div class="col-4 swiper-col text-center">
-                                    <img src="./files/content/mode_clip/fan/fan_single.png" class="img-fluid swiper-img">
+                                    <img src="./files/content/mode_clip/fan/fan_single.png"
+                                        class="img-fluid swiper-img">
                                     <p class="caption-text">Single Average</p>
                                 </div>
                                 <div class="col-4 swiper-col text-center">
@@ -571,7 +668,7 @@
                             </div>
                         </div>
 
-                       <div class="swiper-slide">
+                        <div class="swiper-slide">
                             <div class="slide-header text-center">
                                 <div class="slide-label">Unsupervised Clustering</div>
                                 <div class="slide-concept">Boat</div>
@@ -579,7 +676,8 @@
                             <div class="container mt-4"></div>
                             <div class="row swiper-row">
                                 <div class="col-4 swiper-col text-center">
-                                    <img src="./files/content/mode_clip/boat/boat_single.png" class="img-fluid swiper-img">
+                                    <img src="./files/content/mode_clip/boat/boat_single.png"
+                                        class="img-fluid swiper-img">
                                     <p class="caption-text">Single Average</p>
                                 </div>
                                 <div class="col-4 swiper-col text-center">
@@ -591,7 +689,7 @@
                                     <p class="caption-text">Cluster 2</p>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
 
                     </div>
                     <div class="swiper-pagination"></div>
@@ -601,13 +699,14 @@
             <div class="mode-swiper-button-next"></div>
         </div>
         <div class="text-center mt-3 mb-4">
-            <a class="btn btn-light mybtn" style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: inline-flex; align-items: center;" href="mode_averages_unsupervised_all.html" role="button">
+            <a class="btn btn-light mybtn"
+                style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: inline-flex; align-items: center;"
+                href="mode_averages_unsupervised_all.html" role="button">
                 <span>All results</span>
             </a>
         </div>
 
         <!-- Swiper for Grounded BLIP-VQA Clusters -->
-        <div class="container mt-5"></div>
         <div class="swiper-outer-wrapper">
             <div class="swiper-card">
                 <div class="swiper" id="main-results-swiper">
@@ -615,7 +714,8 @@
                         <div class="swiper-slide">
                             <div class="slide-header text-center">
                                 <div class="slide-label">Grounded Clustering</div>
-                                <div class="slide-concept">Car <span class="slide-detail">clustered by</span><span class="slide-bold"> Model</span></div>
+                                <div class="slide-concept">Car <span class="slide-detail">clustered by</span><span
+                                        class="slide-bold"> Model</span></div>
                             </div>
                             <div class="container mt-4"></div>
                             <div class="row swiper-row">
@@ -641,7 +741,8 @@
                         <div class="swiper-slide">
                             <div class="slide-header text-center">
                                 <div class="slide-label">Grounded Clustering</div>
-                                <div class="slide-concept">Dog <span class="slide-detail">clustered by</span><span class="slide-bold"> Breed</span></div>
+                                <div class="slide-concept">Dog <span class="slide-detail">clustered by</span><span
+                                        class="slide-bold"> Breed</span></div>
                             </div>
                             <div class="container mt-4"></div>
                             <div class="row swiper-row">
@@ -667,7 +768,8 @@
                         <div class="swiper-slide">
                             <div class="slide-header text-center">
                                 <div class="slide-label">Grounded Clustering</div>
-                                <div class="slide-concept">Astronaut <span class="slide-detail">clustered by</span><span class="slide-bold"> Ethnicity</span></div>
+                                <div class="slide-concept">Astronaut <span class="slide-detail">clustered by</span><span
+                                        class="slide-bold"> Ethnicity</span></div>
                             </div>
                             <div class="container mt-4"></div>
                             <div class="row swiper-row">
@@ -693,24 +795,29 @@
                         <div class="swiper-slide">
                             <div class="slide-header text-center">
                                 <div class="slide-label">Grounded Clustering</div>
-                                <div class="slide-concept">Car <span class="slide-detail">clustered by</span><span class="slide-bold"> Color</span></div>
+                                <div class="slide-concept">Car <span class="slide-detail">clustered by</span><span
+                                        class="slide-bold"> Color</span></div>
                             </div>
                             <div class="container mt-4"></div>
                             <div class="row swiper-row">
                                 <div class="col-6 col-md-3 swiper-col text-center">
-                                    <img src="./files/content/mode_vqa/car_color/car_color1.png" class="img-fluid swiper-img">
+                                    <img src="./files/content/mode_vqa/car_color/car_color1.png"
+                                        class="img-fluid swiper-img">
                                     <p class="caption-text">Cluster 1</p>
                                 </div>
                                 <div class="col-6 col-md-3 swiper-col text-center">
-                                    <img src="./files/content/mode_vqa/car_color/car_color2.png" class="img-fluid swiper-img">
+                                    <img src="./files/content/mode_vqa/car_color/car_color2.png"
+                                        class="img-fluid swiper-img">
                                     <p class="caption-text">Cluster 2</p>
                                 </div>
                                 <div class="col-6 col-md-3 swiper-col text-center">
-                                    <img src="./files/content/mode_vqa/car_color/car_color3.png" class="img-fluid swiper-img">
+                                    <img src="./files/content/mode_vqa/car_color/car_color3.png"
+                                        class="img-fluid swiper-img">
                                     <p class="caption-text">Cluster 3</p>
                                 </div>
                                 <div class="col-6 col-md-3 swiper-col text-center">
-                                    <img src="./files/content/mode_vqa/car_color/car_color4.png" class="img-fluid swiper-img">
+                                    <img src="./files/content/mode_vqa/car_color/car_color4.png"
+                                        class="img-fluid swiper-img">
                                     <p class="caption-text">Cluster 4</p>
                                 </div>
                             </div>
@@ -725,7 +832,9 @@
             <div class="swiper-button-next"></div>
         </div>
         <div class="text-center mt-3 mb-4">
-            <a class="btn btn-light mybtn" style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: inline-flex; align-items: center;" href="mode_averages_grounded_all.html" role="button">
+            <a class="btn btn-light mybtn"
+                style="border-radius: 20px; font-size: 1.05rem; padding: 6px 18px; border: 1px solid #ddd; display: inline-flex; align-items: center;"
+                href="mode_averages_grounded_all.html" role="button">
                 <span>All results</span>
             </a>
         </div>
@@ -760,7 +869,8 @@
                         <p class="caption-text">Horse Cart</p>
                     </div>
                     <div class="col-4 col-sm-3 col-md-2 dit-col text-center">
-                        <img src="./files/content/dit/baseball_player.png" class="img-fluid dit-img" alt="Baseball Player">
+                        <img src="./files/content/dit/baseball_player.png" class="img-fluid dit-img"
+                            alt="Baseball Player">
                         <p class="caption-text">Baseball Player</p>
                     </div>
                 </div>
@@ -827,7 +937,8 @@
                         <p class="caption-text">Aurora</p>
                     </div>
                     <div class="col-6 col-sm-3 dit-col text-center">
-                        <img src="./files/content/additional/ferris_wheels.jpg" class="img-fluid dit-img" alt="Ferris Wheel">
+                        <img src="./files/content/additional/ferris_wheels.jpg" class="img-fluid dit-img"
+                            alt="Ferris Wheel">
                         <p class="caption-text">Ferris Wheel</p>
                     </div>
                     <div class="col-6 col-sm-3 dit-col text-center">
@@ -852,30 +963,35 @@
     </section>
 
     <section id="footnote">
-    <div class="end" style="margin-top: 30px;">
-        <div style="text-align: center;">
-            <a href="https://vistec.ist/vision" target="_blank"><img src="./files/content/logo/vll_logo.png"
-                style="width: 130px; display: inline; margin: 0 100px;"></a>
-            <a href="https://vistec.ac.th/" target="_blank"><img src="./files/content/logo/vistec_logo.png"
-                class="vistec-offset" style="width: 130px; display: inline; margin: 0 100px; position:relative; "></a>
+        <div class="end" style="margin-top: 30px; padding-top: 10px">
+            <div class="container" style="max-width: 900px; text-align: center;">
+                <p style="font-size: 14px; color: #6a6a6a;">
+                    This website was built upon templates borrowed from <a
+                        href="https://diffusion-face-relighting.github.io/"
+                        style="color: inherit; text-decoration: underline;">DiFaReli</a>, <a
+                        href="https://nerfies.github.io/"
+                        style="color: inherit; text-decoration: underline;">Nerfies</a>,
+                    and <a href="https://microsoft.github.io/renderformer/"
+                        style="color: inherit; text-decoration: underline;">RenderFormer</a>.
+                </p>
+            </div>
+            <div style="text-align: center; padding-top: 0px; padding-bottom: 10px;">
+                <a href="https://vistec.ist/vision" target="_blank"><img src="./files/content/logo/vll_logo.png"
+                        style="width: 130px; display: inline; margin: 0 100px;"></a>
+                <a href="https://vistec.ac.th/" target="_blank"><img src="./files/content/logo/vistec_logo.png"
+                        class="vistec-offset"
+                        style="width: 130px; display: inline; margin: 0 100px; position:relative; "></a>
+            </div>
         </div>
-    </div>
     </section>
 
-    <section id="acknowledgements" style="margin-top: 50px; padding: 30px 0;">
-        <div class="container" style="max-width: 900px; text-align: center;">
-            <p style="font-size: 14px; color: #6a6a6a;">
-                This website was built upon templates borrowed from <a href="https://diffusion-face-relighting.github.io/" style="color: inherit; text-decoration: underline;">DiFaReli</a>, <a href="https://nerfies.github.io/" style="color: inherit; text-decoration: underline;">Nerfies</a>, and <a href="https://microsoft.github.io/renderformer/" style="color: inherit; text-decoration: underline;">RenderFormer</a>.
-            </p>
-        </div>
-    </section>
 
     <!-- SwiperJS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
         /* ── Dark mode ─────────────────────────────────────────── */
         const toggle = document.getElementById('theme-toggle');
-        const icon   = document.getElementById('theme-icon');
+        const icon = document.getElementById('theme-icon');
 
         function applyTheme(dark) {
             document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
@@ -959,4 +1075,5 @@
         });
     </script>
 </body>
+
 </html>
