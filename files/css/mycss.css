@@ -603,37 +603,36 @@
 
 .pinched-s-text {
     display: inline-block;
-    /* 30 seconds total = 10 pinches of 3 seconds each */
-    animation: s-small-bite 30s infinite steps(1);
+    /* Sync with the 3s bird peck cycle */
+    animation: s-tip-bite 3s infinite;
 }
 
-@keyframes s-small-bite {
-    0%, 3.99% { clip-path: inset(0% 0 0 0); }
-    4%, 13.99% { clip-path: inset(35% 0 0 0); }
-    14%, 23.99% { clip-path: inset(37% 0 0 0); }
-    24%, 33.99% { clip-path: inset(39% 0 0 0); }
-    34%, 43.99% { clip-path: inset(41% 0 0 0); }
-    44%, 53.99% { clip-path: inset(43% 0 0 0); }
-    54%, 63.99% { clip-path: inset(45% 0 0 0); }
-    64%, 73.99% { clip-path: inset(47% 0 0 0); }
-    74%, 83.99% { clip-path: inset(49% 0 0 0); }
-    84%, 93.99% { clip-path: inset(51% 0 0 0); }
-    94%, 99.99% { clip-path: inset(53% 0 0 0); }
-    100% { clip-path: inset(0% 0 0 0); }
+@keyframes s-tip-bite {
+    0%, 39% { 
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    40%, 80% { /* Extreme bite - removing the entire top 40% of the character */
+        /* clip-path: polygon(0% 0%, 60% 0%, 60% 20%, 100% 50%, 100% 100%, 0% 100%, 0% 0%); */
+        clip-path: polygon(0% 0%, 80% 0%, 80% 0%, 60% 50%, 100% 50%, 100% 100%, 0% 100%);
+    }
+    100% { /* Grows back/fades in */
+        /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); */
+        clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 60% 50%, 100% 50%, 100% 100%, 0% 100%);
+    }
 }
 
 
 .fragment-shard {
     position: absolute;
-    top: 50%;
-    right: 0px;
-    width: 5px;
-    height: 7px;
+    top: 10%; 
+    right: 10%;
+    width: 10px; /* Larger shard */
+    height: 10px;
     background-color: currentColor;
     clip-path: polygon(10% 0%, 100% 30%, 80% 100%, 0% 80%);
     opacity: 0;
     pointer-events: none;
-    /* The shard still flies every 3 seconds to sync with the bird */
+    /* Fixed at the tip, no longer moves around the S */
     animation: shard-fly 3s infinite ease-out;
 }
 
@@ -658,6 +657,7 @@
 
 .pecking-bird {
     display: inline-block;
+    position: relative;
     /* Bird pecks every 3 seconds */
     animation: bird-peck 3s infinite cubic-bezier(0.25, 0.1, 0.25, 1);
     transform-origin: left bottom;
@@ -668,10 +668,10 @@
         transform: rotate(0deg) translate(0px, 0px); 
     }
     35% { /* Approach to pinch */
-        transform: rotate(-15deg) translate(-15px, 5px); 
+        transform: rotate(-15deg) translate(-3px, 5px); 
     }
-    40% { /* The pinch impact */
-        transform: rotate(-25deg) translate(-22px, 12px); 
+    38% { /* The pinch impact */
+        transform: rotate(-25deg) translate(-4px, 8px); 
     }
     45% { /* Pull back quick with piece */
         transform: rotate(5deg) translate(5px, -10px); 
