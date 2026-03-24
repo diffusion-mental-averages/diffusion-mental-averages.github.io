@@ -258,8 +258,6 @@
                                 converge toward a shared semantic consensus.
                             </p>
                             <p style="font-size: 16px; color: #6a6a6a;">
-                                The key idea is to jointly optimize multiple noise latents so that their denoising
-                                trajectories converge toward shared semantics.
                                 Specifically, at each timestep, their h-space activations are averaged to form a
                                 semantic target, and each latent is optimized to match it before denoising to the next
                                 step.
@@ -904,21 +902,21 @@
     <script>
         /* ── Dark mode ─────────────────────────────────────────── */
         // const toggle = document.getElementById('theme-toggle');
-        const icon = document.getElementById('theme-icon');
+        // const icon = document.getElementById('theme-icon');
 
-        function applyTheme(dark) {
-            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-            icon.className = dark ? 'fa fa-sun-o' : 'fa fa-moon-o';
-        }
+        // function applyTheme(dark) {
+            // document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+            // icon.className = dark ? 'fa fa-sun-o' : 'fa fa-moon-o';
+        // }
 
         // Restore saved preference
-        applyTheme(localStorage.getItem('theme') === 'dark');
+        // applyTheme(localStorage.getItem('theme') === 'dark');
 
-        toggle.addEventListener('click', () => {
-            const dark = document.documentElement.getAttribute('data-theme') !== 'dark';
-            localStorage.setItem('theme', dark ? 'dark' : 'light');
-            applyTheme(dark);
-        });
+        // toggle.addEventListener('click', () => {
+            // const dark = document.documentElement.getAttribute('data-theme') !== 'dark';
+            // localStorage.setItem('theme', dark ? 'dark' : 'light');
+            // applyTheme(dark);
+        // });
 
         /* ── Swiper ────────────────────────────────────────────── */
         const teaserSwiper = new Swiper('#teaser-swiper', {
