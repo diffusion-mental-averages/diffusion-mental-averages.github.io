@@ -550,11 +550,6 @@ body {
 	margin-bottom: 0px !important;
 }
 
-h2 {
-	font-size: 28px;
-	margin-bottom: 0.8em;
-	margin-top: 3rem;
-}
 h1,
 h2,
 h3,
@@ -567,6 +562,11 @@ h6 {
 	line-height: 1.1;
 	color: inherit;
 	margin-top: 0px;
+}
+h2 {
+	font-size: 28px;
+	margin-bottom: 0.5em;
+	margin-top: 0.2rem;
 }
 
 p,
