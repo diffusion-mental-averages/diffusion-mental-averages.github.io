@@ -1,7 +1,8 @@
 /* TLDR BOX */
 .tldr-box {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    /* background-color: #f8f9fa; */
+    background-color: #dbedff;
+    border: 1px solid #7dadde;
     border-radius: 12px;
     
     /* 1. Control the internal space exactly */
@@ -40,7 +41,7 @@
     /* The rounded corners from your reference */
     border-radius: 12px; 
     /* Internal spacing: Top/Bottom 30px, Left/Right 40px */
-    padding: 30px 40px; 
+    padding: 20px 0px 15px 0px; 
     /* Space between different cards */
     margin-bottom: 30px; 
     /* A subtle shadow to give it 'depth' like the abstract box */
@@ -49,6 +50,32 @@
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.title-pad {
+    padding-top: 1vw;
+}
+
+@media (max-width: 575px) {
+    .bounding-box {
+        padding: 15px 2px;
+    }
+    .table-responsive th {
+        font-size: 0.8rem;
+    }
+
+    .model-prompt-caption {
+        font-size: 0.9rem !important;
+    }
+
+    .fragment-shard {
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    /* .title-pad { */
+        /* padding-top: 0px !important; */
+    /* } */
 }
 
 /* Section line divider */
@@ -207,7 +234,7 @@
     margin-bottom: 7px;
     text-align: center;
     margin-top: 40px;
-    color: #6a6a6a;
+    color: #3a689a;
 }
 .slide-concept {
     font-size: 1.5rem;
@@ -243,8 +270,9 @@
     .swiper-outer-wrapper { padding: 0 12px; }
     .swiper-card          { padding: 14px 10px 24px; }
     .caption-text         { font-size: 0.72rem; }
-    .slide-label          { font-size: 0.82rem; }
+    .slide-label          { font-size: 1.2rem; }
     .slide-concept        { font-size: 1.2rem; }
+    .slide-detail         { font-size: 1rem; }
     .swiper-button-prev,
     .swiper-button-next,
     .teaser-swiper-button-prev,
@@ -572,6 +600,7 @@
 }
 
 .pecking-bird {
+    width: clamp(2.5rem, 6vw, 5rem);
     display: inline-block;
     position: relative;
     /* Bird pecks every 3 seconds */
