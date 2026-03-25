@@ -184,92 +184,237 @@
                 </div>
             </div>
             <section id="additional results">
+                <style>
+                    .marquee-track {
+                        display: flex;
+                        width: max-content !important;
+                        flex: none !important;
+                        margin: 0 !important;
+                    }
+                    #main_results {
+                        overflow-x: auto; 
+                        scroll-behavior: auto; /* Ensure smooth native scrolling */
+                    }
+                </style>
                 <div id="main_results">
-                    <div class="text-center">
-                        <img src="./files/content/additional/cat.png" alt="Alien">
-                        <p class="model-prompt-caption">"Cat"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/clock.png" alt="Clock">
-                        <p class="model-prompt-caption">"Clock"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/denver.png" alt="Alien">
-                        <p class="model-prompt-caption">"Denver"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/giraffe.png" alt="Alien">
-                        <p class="model-prompt-caption">"Giraffe"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/intelligence.png" alt="Alien">
-                        <p class="model-prompt-caption">"Intelligence"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/jellyfish.png" alt="Alien">
-                        <p class="model-prompt-caption">"Jellyfish"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/marriage.png" alt="Alien">
-                        <p class="model-prompt-caption">"Marriage"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/santorini.png" alt="Alien">
-                        <p class="model-prompt-caption">"Santorini"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/alien.jpg" alt="Alien">
-                        <p class="model-prompt-caption">"Alien"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/wizard.jpg" alt="Wizard">
-                        <p class="model-prompt-caption">"Wizard"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/kungfu.jpg" alt="Kungfu Master">
-                        <p class="model-prompt-caption">"Kungfu Master"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/ceo.jpg" alt="CEO">
-                        <p class="model-prompt-caption">"CEO"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/dance.jpg" alt="Dance">
-                        <p class="model-prompt-caption">"Dance"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/breakfast.jpg" alt="Breakfast">
-                        <p class="model-prompt-caption">"Breakfast"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/aurora.jpg" alt="Aurora">
-                        <p class="model-prompt-caption">"Aurora"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/ferris_wheels.jpg" alt="Ferris Wheel">
-                        <p class="model-prompt-caption">"Ferris Wheel"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/childhood.jpg" alt="Childhood">
-                        <p class="model-prompt-caption">"Childhood"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/peace.jpg" alt="Peace">
-                        <p class="model-prompt-caption">"Peace"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/fear.jpg" alt="Fear">
-                        <p class="model-prompt-caption">"Fear"</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="./files/content/additional/strength.jpg" alt="Strength">
-                        <p class="model-prompt-caption">"Strength"</p>
+                    <div class="marquee-track">
+                        <div class="text-center">
+                            <img src="./files/content/additional/cat.png" alt="Alien">
+                            <p class="model-prompt-caption">"Cat"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/clock.png" alt="Clock">
+                            <p class="model-prompt-caption">"Clock"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/denver.png" alt="Alien">
+                            <p class="model-prompt-caption">"Denver"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/giraffe.png" alt="Alien">
+                            <p class="model-prompt-caption">"Giraffe"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/intelligence.png" alt="Alien">
+                            <p class="model-prompt-caption">"Intelligence"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/jellyfish.png" alt="Alien">
+                            <p class="model-prompt-caption">"Jellyfish"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/marriage.png" alt="Alien">
+                            <p class="model-prompt-caption">"Marriage"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/santorini.png" alt="Alien">
+                            <p class="model-prompt-caption">"Santorini"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/alien.jpg" alt="Alien">
+                            <p class="model-prompt-caption">"Alien"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/wizard.jpg" alt="Wizard">
+                            <p class="model-prompt-caption">"Wizard"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/kungfu.jpg" alt="Kungfu Master">
+                            <p class="model-prompt-caption">"Kungfu Master"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/ceo.jpg" alt="CEO">
+                            <p class="model-prompt-caption">"CEO"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/dance.jpg" alt="Dance">
+                            <p class="model-prompt-caption">"Dance"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/breakfast.jpg" alt="Breakfast">
+                            <p class="model-prompt-caption">"Breakfast"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/aurora.jpg" alt="Aurora">
+                            <p class="model-prompt-caption">"Aurora"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/ferris_wheels.jpg" alt="Ferris Wheel">
+                            <p class="model-prompt-caption">"Ferris Wheel"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/childhood.jpg" alt="Childhood">
+                            <p class="model-prompt-caption">"Childhood"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/peace.jpg" alt="Peace">
+                            <p class="model-prompt-caption">"Peace"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/fear.jpg" alt="Fear">
+                            <p class="model-prompt-caption">"Fear"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/strength.jpg" alt="Strength">
+                            <p class="model-prompt-caption">"Strength"</p>
+                        </div>
+                        <!-- Duplicated set for seamless looping -->
+                        <div class="text-center">
+                            <img src="./files/content/additional/cat.png" alt="Alien">
+                            <p class="model-prompt-caption">"Cat"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/clock.png" alt="Clock">
+                            <p class="model-prompt-caption">"Clock"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/denver.png" alt="Alien">
+                            <p class="model-prompt-caption">"Denver"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/giraffe.png" alt="Alien">
+                            <p class="model-prompt-caption">"Giraffe"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/intelligence.png" alt="Alien">
+                            <p class="model-prompt-caption">"Intelligence"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/jellyfish.png" alt="Alien">
+                            <p class="model-prompt-caption">"Jellyfish"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/marriage.png" alt="Alien">
+                            <p class="model-prompt-caption">"Marriage"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/santorini.png" alt="Alien">
+                            <p class="model-prompt-caption">"Santorini"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/alien.jpg" alt="Alien">
+                            <p class="model-prompt-caption">"Alien"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/wizard.jpg" alt="Wizard">
+                            <p class="model-prompt-caption">"Wizard"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/kungfu.jpg" alt="Kungfu Master">
+                            <p class="model-prompt-caption">"Kungfu Master"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/ceo.jpg" alt="CEO">
+                            <p class="model-prompt-caption">"CEO"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/dance.jpg" alt="Dance">
+                            <p class="model-prompt-caption">"Dance"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/breakfast.jpg" alt="Breakfast">
+                            <p class="model-prompt-caption">"Breakfast"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/aurora.jpg" alt="Aurora">
+                            <p class="model-prompt-caption">"Aurora"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/ferris_wheels.jpg" alt="Ferris Wheel">
+                            <p class="model-prompt-caption">"Ferris Wheel"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/childhood.jpg" alt="Childhood">
+                            <p class="model-prompt-caption">"Childhood"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/peace.jpg" alt="Peace">
+                            <p class="model-prompt-caption">"Peace"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/fear.jpg" alt="Fear">
+                            <p class="model-prompt-caption">"Fear"</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="./files/content/additional/strength.jpg" alt="Strength">
+                            <p class="model-prompt-caption">"Strength"</p>
+                        </div>
                     </div>
                 </div>
                 <div class="scroll-hint">
                     <span>Scroll for more</span>
                     <i class="fa fa-long-arrow-right"></i>
                 </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const slider = document.getElementById('main_results');
+                        let isPaused = false;
+                        let exactScroll = slider.scrollLeft;
+
+                        function autoScroll() {
+                            const halfWidth = slider.scrollWidth / 2;
+                            
+                            if (!isPaused) {
+                                exactScroll += 1.0; // Speed of carousel
+                                
+                                // Auto infinite right scroll
+                                if (exactScroll >= halfWidth) {
+                                    exactScroll -= halfWidth;
+                                }
+                                slider.scrollLeft = exactScroll;
+                            } else {
+                                // Keep exactScroll perfectly synced when user manually scrolls
+                                exactScroll = slider.scrollLeft;
+                            }
+                            
+                            // Check manual scroll bounds for infinite loop in BOTH directions
+                            if (slider.scrollLeft <= 0) {
+                                // If they scroll all the way to the left, jump to the middle
+                                slider.scrollLeft += halfWidth;
+                                exactScroll = slider.scrollLeft;
+                            } else if (slider.scrollLeft >= halfWidth * 1.5) {
+                                // If they scroll really far right manually
+                                slider.scrollLeft -= halfWidth;
+                                exactScroll = slider.scrollLeft;
+                            }
+
+                            requestAnimationFrame(autoScroll);
+                        }
+
+                        // Start looping
+                        requestAnimationFrame(autoScroll);
+
+                        // Pause on hover
+                        slider.addEventListener('mouseenter', () => isPaused = true);
+                        slider.addEventListener('mouseleave', () => isPaused = false);
+                        
+                        // Pause on touch (mobile)
+                        slider.addEventListener('touchstart', () => isPaused = true);
+                        slider.addEventListener('touchend', () => {
+                            setTimeout(() => isPaused = false, 1000); // Resume shortly after touch ends
+                        });
+                    });
+                </script>
             </section>
             <div class="bounding-box" id="method">
                 <div class="container" style="max-width: 900px">
