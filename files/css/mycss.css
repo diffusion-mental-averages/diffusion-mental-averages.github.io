@@ -648,6 +648,7 @@
     scrollbar-width: none; /* Hide scrollbar for Firefox */
     padding-bottom: 0px;
     margin-top: -15px;
+    margin-bottom: 15px;
 }
 
 #main_results::-webkit-scrollbar {
